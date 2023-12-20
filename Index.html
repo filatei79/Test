@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Driving Eligibility Checker</title>
+    <style>
+        body {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .name-inputs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .name-inputs div {
+            margin: 0 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function checkEligibility() {
+            var age = document.getElementById("age").value;
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+
+            if (age >= 18) {
+                document.getElementById("result").innerHTML = firstName + " " + lastName + ", you are qualified to drive.";
+            } else {
+                document.getElementById("result").innerHTML = firstName + " " + lastName + ", you are not qualified to drive.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Driving Eligibility Checker</h3>
+    <div class="name-inputs">
+        <div>First Name: <input type="text" id="firstName"></div>
+        <div>Last Name: <input type="text" id="lastName"></div>
+    </div>
+    <div class="center">
+        Age: <input type="number" id="age"><br>
+        <input type="button" value="Check Eligibility" onclick="checkEligibility()">
+    </div>
+    <p id="result"></p>
+</body>
+</html>
